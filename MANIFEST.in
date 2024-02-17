@@ -1,0 +1,8 @@
+recursive-include profiles *
+prune profiles/__pycache__
+recursive-exclude tests *
+recursive-exclude build *
+recursive-exclude scripts *
+
+global-exclude *.pyc *.o
+global-exclude */__pycache__/*
