@@ -9,7 +9,7 @@ Docker files (Dockerfile, docker-compose.yml, .env.dev) are ready to use.
 
 To run the containers: `docker compose up -d --build`
 
-Now wait and go to http://localhost:8000/reusable_app/my_model_list/ to check if it runs correctly.
+Now, wait for Docker to finish the command, and go to http://localhost:8000/reusable_app/my_model_list/ to check if it runs correctly.
 
 To stop and remove everything: `docker compose down -v --rmi "local"`
 
@@ -22,6 +22,8 @@ That's it, docker makes things easy.
 1. Install requirements using pip (Remember to create your virtual environment):
 
     pip install -r requirements.txt
+    
+    pip install -r requirements.dev.txt
 
 2. Copy-paste env-variables-example.txt inside "wrapper" folder, and change the name to ".env"
 
