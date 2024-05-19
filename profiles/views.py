@@ -6,12 +6,12 @@ from django.http import Http404
 from django.views import generic
 from django.urls import reverse_lazy
 
-from . import models, forms, serializers
+from . import models, serializers
 # Create your views here.
 
 class MyModelListApiView(APIView):
     def get(self, request, format=None):
-        mymodel = models.MyModel.objects.all()
+        mymodel = models.Profile.objects.all()
         serializer = serializers.MySerializer(mymodel, many=True)
         return Response(serializer.data)
 
@@ -25,7 +25,7 @@ class MyModelListApiView(APIView):
 class MyModelDetailApiView(APIView):
     def get_object(self, mymodel_id):
         try:
-            return models.MyModel.objects.get(pk=mymodel_id)
+            return models.Profile.objects.get(pk=mymodel_id)
         except models.MyModel.DoesNotExist:
             raise Http404
 

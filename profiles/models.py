@@ -66,6 +66,8 @@ class Profile(models.Model):
         null=False, 
         default=False
     )
+    created_at = models.DateTimeField(auto_now_add=True, null=False)
+    updated_at = models.DateTimeField(auto_now=True)
 
     def __str__(self):
         return self.user.username
@@ -95,6 +97,13 @@ class Setting(models.Model):
         null=False, 
         default=1
     )
+    # International (SI) vs US system
+    measurement_system = models.PositiveSmallIntegerField(
+        null=False, 
+        default=1
+    )
+    created_at = models.DateTimeField(auto_now_add=True, null=False)
+    updated_at = models.DateTimeField(auto_now=True)
 
     def __str__(self):
         return self.user.username
